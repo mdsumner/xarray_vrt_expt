@@ -1,6 +1,6 @@
 ---
 title: "CRS on time dimension"
-format: html
+format: ipynb
 editor: visual
 ---
 
@@ -12,10 +12,10 @@ When xarray reads one dataset with `open_dataset()` it correctly sits on its own
 with `open_mfdataset()` crs is on the 'time' dimension. This causes problems with append. 
 
 
-(I cannot get this to work from the github URLs, so I'm just assuming you download some [from here](https://github.com/mdsumner/xarray_vrt_expt/tree/master/data/nsidc)). 
+(I cannot get this to work from the github URLs, so I'm just assuming you download some [from here](https://github.com/mdsumner/xarray_vrt_expt/tree/master/data/nsidc), or wget as here). 
 
 
-```{bash eval=FALSE}
+```
 wget https://github.com/mdsumner/xarray_vrt_expt/raw/master/data/nsidc/NSIDC0051_SEAICE_PS_S25km_20220522_v2.0.nc
 wget https://github.com/mdsumner/xarray_vrt_expt/raw/master/data/nsidc/NSIDC0051_SEAICE_PS_S25km_20220523_v2.0.nc
 

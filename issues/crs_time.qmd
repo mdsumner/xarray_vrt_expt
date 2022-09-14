@@ -22,6 +22,7 @@ wget https://github.com/mdsumner/xarray_vrt_expt/raw/master/data/nsidc/NSIDC0051
 ```
 
 
+### ok with open_dataset
 
 This first example is correct, crs is on its own (not associated with time dimension). 
 
@@ -30,6 +31,8 @@ import xarray as xr
 xr.open_dataset('NSIDC0051_SEAICE_PS_S25km_20220522_v2.0.nc', engine = 'netcdf4')
 ```
 
+
+### Not ok with open multiple
 
 Oops, crs is on time dimension. 
 
@@ -41,6 +44,8 @@ xr.open_mfdataset(['NSIDC0051_SEAICE_PS_S25km_20220522_v2.0.nc',
 ```
 
 
+### Ok when multiple open only one. 
+
 Ok when we only use one source. 
 
 ```{python open-multiple0}
@@ -48,7 +53,7 @@ Ok when we only use one source.
 xr.open_mfdataset('NSIDC0051_SEAICE_PS_S25km_20220522_v2.0.nc', engine = 'netcdf4')
 ```
 
-```{open open-multiple1}
+```{python open-multiple1}
 xr.open_mfdataset(['NSIDC0051_SEAICE_PS_S25km_20220522_v2.0.nc'], engine = 'netcdf4')
 ```
 
